@@ -1,3 +1,5 @@
+require 'unirest'
+
 current_valuation = 0
 current_karma = 0
 
