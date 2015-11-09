@@ -5,7 +5,7 @@ points = []
 end
 last_x = points.last[:x]
 
-SCHEDULER.every '2s' do
+SCHEDULER.every '60s' do
   points.shift
   last_x += 1
   points << { x: last_x, y: rand(50) }
