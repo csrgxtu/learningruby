@@ -30,5 +30,6 @@ SCHEDULER.every '2s' do
   send_event('booklists', { text: rand(50)})
   send_event('reviews', { text: response.body['data']['comment_count']})
   send_event('thumbups', { text: response.body['data']['favour_count']})
-  
+  send_event('booklists', { text: response.body['data']['floor_count']})
+
 end
