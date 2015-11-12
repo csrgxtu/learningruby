@@ -27,7 +27,6 @@ SCHEDULER.every '2s' do
   # send_event('welcome', { text: rand(100).to_s })
   send_event('books', { text: response.body['data']['library_count']})
   send_event('users', { text: response.body['data']['online_count']})
-  send_event('booklists', { text: rand(50)})
   send_event('reviews', { text: response.body['data']['comment_count']})
   send_event('thumbups', { text: response.body['data']['favour_count']})
   send_event('booklists', { text: response.body['data']['floor_count']})
