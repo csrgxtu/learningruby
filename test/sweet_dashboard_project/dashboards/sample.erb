@@ -1,12 +1,40 @@
 <% content_for :title do %>美丽阅读KPI公告板<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="bookkindsnum" data-view="Text" data-title="书目种类" data-text="0"></div>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="books" data-view="Text" data-title="新增书库" data-moreinfo="当天（本）" data-text="0"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="users" data-view="Text" style="background-color:#9c4274" data-title="在线用户" data-moreinfo="实时（个）" data-text="0"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="onlineusers" data-view="Text" data-title="在线用户" data-text="0"></div>
+      <div data-id="clock" data-view="Clock" data-title="时钟"></div>
     </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="booklists" data-view="Text" style="background-color:#47bbb3" data-title="新增书单" data-moreinfo="当天（个）" data-text="0"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="reviews" data-view="Text" style="background-color:#bdb76b" data-title="评论" data-moreinfo="当天（条）" data-text="0"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="thumbups" data-view="Text" style="background-color:#4682B4" data-title="点赞" data-moreinfo="当天（个）" data-text="0"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="registerUptime" data-view="Text" style="background-color:#2F4F4F" data-title="注册Uptime" data-text="0"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="reviewUptime" data-view="Text" style="background-color:#9370db" data-title="评论Uptime" data-text="0"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="scanUptime" data-view="Text" style="background-color:#4169E1" data-title="扫描Uptime" data-text="0"></div>
+    </li>
+
+
+
+    <!-- <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="convergence" data-view="Graph" data-title="美丽阅读" style="background-color:#ff9618"></div>
+    </li>
+
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="synergy" data-view="Meter" data-title="日访问量" data-min="0" data-max="100"></div>
     </li>
@@ -15,9 +43,25 @@
       <div data-id="valuation" data-view="Number" data-title="服务器性能" data-moreinfo="CPU使用率" data-prefix="%"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="convergence" data-view="Graph" data-title="美丽阅读" style="background-color:#ff9618"></div>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="valuation" data-view="Clock" data-title="Clock"></div>
     </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="valuation" data-view="Comments" data-title="Comments"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="valuation" data-view="List" data-title="List"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="valuation" data-view="iframe" data-title="List"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="valuation" data-view="Iframe" data-title="List"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="valuation" data-view="Image" data-title="List"></div>
+    </li> -->
+
 
     <!-- <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
