@@ -1,9 +1,8 @@
-require 'unirest'
-
 current_valuation = 0
 current_karma = 0
 
-SCHEDULER.every '5s' do
+SCHEDULER.every '2s' do
+  # response = Unirest.get "http://serverip:port/gps"
   # last_valuation = current_valuation
   # last_karma     = current_karma
   # current_valuation = rand(100)
