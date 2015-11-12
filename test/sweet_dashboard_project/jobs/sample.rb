@@ -25,7 +25,7 @@ SCHEDULER.every '2s' do
   # send_event('karma', { current: current_karma, last: last_karma })
   # send_event('synergy',   { value: rand(100) })
   # send_event('welcome', { text: rand(100).to_s })
-  send_event('books', { text: response.body['data']['library_count']})
+  send_event('books', { mytext: response.body['data']['library_count']})
   send_event('users', { text: response.body['data']['online_count']})
   send_event('reviews', { text: response.body['data']['comment_count']})
   send_event('thumbups', { text: response.body['data']['favour_count']})
