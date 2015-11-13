@@ -3,40 +3,43 @@
 require 'unirest'
 require 'json'
 
-# current_valuation = 0
-# current_karma = 0
+SCHEDULER.every '3s' do
+  dates = Array.new(8)
+  now = Time.new
 
-SCHEDULER.every '2s' do
-  # userUrl = "http://dev.yuedu.io:21010/beautilfulreading/user/count"
-  # libUrl = "http://dev.yuedu.io:21010/beautilfulreading/library/count"
-  # userResponse = Unirest.get userUrl, auth:{:user=>"loser", :password=>"england"}, headers:{ "Accept" => "application/json" }
-  # libResponse = Unirest.get libUrl, auth:{:user=>"loser", :password=>"england"}, headers:{ "Accept" => "application/json" }
+  dates[0] = now.year.to_s + '-' + now.month.to_s + '-' + now.day.to_s
+  tmpdate = now - 86400
+  for i in 1 .. 7
+    dates[i] = tmpdate.year.to_s + '-' + tmpdate.month.to_s + '-' + tmpdate.day.to_s
+    tmpdate = tmpdate - 86400
+  end
+  # puts dates
+
+
+
+  books = Array.new(8)
+  users = Array.new(8)
+  reviews = Array.new(8)
+  thumbups = Array.new(8)
+  booklists = Array.new(8)
   url = "https://api_rio.beautifulreading.com/beautilfulreading/admin/statistics/main"
-  response = Unirest.get url, auth:{:user=>"loser", :password=>"england"}, headers:{ "Accept" => "application/json" }
-  puts(response.body['data'])
-  # print(userResponse.body['data'], libResponse.body['data'])
-  # response = Unirest.get "http://serverip:port/gps"
-  # last_valuation = current_valuation
-  # last_karma     = current_karma
-  # current_valuation = rand(100)
-  # current_karma     = rand(200000)
+  for i in 0 .. 7
+    newUrl = url + '?date=' + dates[i]
+    response = Unirest.get newUrl, auth:{:user=>"loser", :password=>"england"}, headers:{ "Accept" => "application/json" }
+    books[i] = response.body['data']['library_count']
+    users[i] = response.body['data']['online_count']
+    reviews[i] = response.body['data']['comment_count']
+    thumbups[i] = response.body['data']['favour_count']
+    booklists[i] = response.body['data']['floor_count']
+  end
 
-  # send_event('valuation', { current: current_valuation, last: last_valuation })
-  # send_event('karma', { current: current_karma, last: last_karma })
-  # send_event('synergy',   { value: rand(100) })
-  # send_event('welcome', { text: rand(100).to_s })
-  send_event('books', { mytext: response.body['data']['library_count'], day1: rand(20), day2: 33, day3: 28, day4: 42, day5: 46, day6: 12, day7: 21})
-  send_event('users', { text: response.body['data']['online_count']})
-  send_event('reviews', { text: response.body['data']['comment_count']})
-  send_event('thumbups', { text: response.body['data']['favour_count']})
-  send_event('booklists', { text: response.body['data']['floor_count']})
+  # response = Unirest.get url, auth:{:user=>"loser", :password=>"england"}, headers:{ "Accept" => "application/json" }
+  # puts(response.body['data'])
+  # puts books
 
-
- #  headers = {"cols"=>[{"value"=>"Name"}, {"value"=>"Value"}]}
- #  rows = [{"cols"=>[{"value"=>"Name 1"}, {"value"=>"Value 1"}]},
- # {"cols"=>[{"value"=>"Name 2"}, {"value"=>"Value 2"}]},
- # {"cols"=>[{"value"=>"Name 3"}, {"value"=>"Value 3"}]},
- # {"cols"=>[{"value"=>"Name 4"}, {"value"=>"Value 4"}]}]
- #  send_event("my-table", { hrows: headers, rows: rows } )
-
+  send_event('books', { mytext: books[0], day1: books[7], day2: books[6], day3: books[5], day4: books[4], day5: books[3], day6: books[2], day7: books[1]})
+  send_event('users', { mytext: users[0], day1: users[7], day2: users[6], day3: users[5], day4: users[4], day5: users[3], day6: users[2], day7: users[1]})
+  send_event('reviews', { mytext: reviews[0], day1: reviews[7], day2: reviews[6], day3: reviews[5], day4: reviews[4], day5: reviews[3], day6: reviews[2], day7: reviews[1]})
+  send_event('thumbups', { mytext: thumbups[0], day1: thumbups[7], day2: thumbups[6], day3: thumbups[5], day4: thumbups[4], day5: thumbups[3], day6: thumbups[2], day7: thumbups[1]})
+  send_event('booklists', { mytext: booklists[0], day1: booklists[7], day2: booklists[6], day3: booklists[5], day4: booklists[4], day5: booklists[3], day6: booklists[2], day7: booklists[1]})
 end
