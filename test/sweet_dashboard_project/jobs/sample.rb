@@ -25,10 +25,18 @@ SCHEDULER.every '2s' do
   # send_event('karma', { current: current_karma, last: last_karma })
   # send_event('synergy',   { value: rand(100) })
   # send_event('welcome', { text: rand(100).to_s })
-  send_event('books', { mytext: response.body['data']['library_count']})
+  send_event('books', { mytext: response.body['data']['library_count'], day1: rand(20), day2: 33, day3: 28, day4: 42, day5: 46, day6: 12, day7: 21})
   send_event('users', { text: response.body['data']['online_count']})
   send_event('reviews', { text: response.body['data']['comment_count']})
   send_event('thumbups', { text: response.body['data']['favour_count']})
   send_event('booklists', { text: response.body['data']['floor_count']})
+
+
+ #  headers = {"cols"=>[{"value"=>"Name"}, {"value"=>"Value"}]}
+ #  rows = [{"cols"=>[{"value"=>"Name 1"}, {"value"=>"Value 1"}]},
+ # {"cols"=>[{"value"=>"Name 2"}, {"value"=>"Value 2"}]},
+ # {"cols"=>[{"value"=>"Name 3"}, {"value"=>"Value 3"}]},
+ # {"cols"=>[{"value"=>"Name 4"}, {"value"=>"Value 4"}]}]
+ #  send_event("my-table", { hrows: headers, rows: rows } )
 
 end

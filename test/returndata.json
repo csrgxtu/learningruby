@@ -1,0 +1,72 @@
+{
+  "head": {
+    "code": 200,
+    "msg": "success"
+  },
+  "data": [
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    },
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    },
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    },
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    },
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    },
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    },
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    },
+    {
+      "online_count": 3,
+      "library_count": 792,
+      "comment_count": 29,
+      "favour_count": 8,
+      "floor_count": 7,
+      "user_count": 1
+    }
+  ]
+}
